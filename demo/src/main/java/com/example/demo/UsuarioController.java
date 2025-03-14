@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 public class UsuarioController {
 
     @Autowired
-    private UsuarioService usuarioService;
+    private ProductoService usuarioService;
 
     @GetMapping("/list")
     public List<Producto> cargarUsuarios() {

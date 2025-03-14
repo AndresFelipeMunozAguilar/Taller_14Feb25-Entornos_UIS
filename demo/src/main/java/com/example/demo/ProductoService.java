@@ -1,4 +1,4 @@
-package com.example;
+package com.example.demo;
 
 import java.util.List;
 
@@ -14,37 +14,37 @@ public class ProductoService implements IProductoService {
     private final DemoApplication demoApplication;
 
     @Autowired
-    ProductoRepositorio usuarioRepositorio;
+    ProductoRepositorio productoRepositorio;
 
     ProductoService(DemoApplication demoApplication) {
         this.demoApplication = demoApplication;
     }
 
     @Override
-    public List<Producto> getUsuarios() {
-        return usuarioRepositorio.findAll();
+    public List<Producto> getProductos() {
+        return productoRepositorio.findAll();
     }
 
     @Override
-    public Producto nuevoUsuario(Producto usuario) {
-        return usuarioRepositorio.save(usuario);
+    public Producto nuevoProducto(Producto producto) {
+        return productoRepositorio.save(producto);
     }
 
     @Override
-    public Producto buscarUsuario(Long id) {
-        Producto usuario = null;
-        usuario = usuarioRepositorio.findById(id).orElse(null);
+    public Producto buscarProducto(Long id) {
+        Producto producto = null;
+        producto = productoRepositorio.findById(id).orElse(null);
 
-        if (usuario == null) {
+        if (producto == null) {
             return null;
         }
 
-        return usuario;
+        return producto;
     }
 
     @Override
-    public int borrarUsuario(Long id) {
-        usuarioRepositorio.deleteById(id);
+    public int borrarProducto(Long id) {
+        productoRepositorio.deleteById(id);
         return 1;
     }
 }
