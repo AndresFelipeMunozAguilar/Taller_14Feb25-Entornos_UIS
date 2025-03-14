@@ -9,14 +9,14 @@ import jakarta.transaction.Transactional;
 
 @Service
 @Transactional
-public class UsuarioService implements IUsuarioService {
+public class ProductoService implements IProductoService {
 
     private final DemoApplication demoApplication;
 
     @Autowired
     ProductoRepositorio usuarioRepositorio;
 
-    UsuarioService(DemoApplication demoApplication) {
+    ProductoService(DemoApplication demoApplication) {
         this.demoApplication = demoApplication;
     }
 
