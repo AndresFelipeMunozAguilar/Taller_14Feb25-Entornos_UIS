@@ -14,7 +14,7 @@ public class UsuarioService implements IUsuarioService {
     private final DemoApplication demoApplication;
 
     @Autowired
-    UsuarioRepositorio usuarioRepositorio;
+    ProductoRepositorio usuarioRepositorio;
 
     UsuarioService(DemoApplication demoApplication) {
         this.demoApplication = demoApplication;
