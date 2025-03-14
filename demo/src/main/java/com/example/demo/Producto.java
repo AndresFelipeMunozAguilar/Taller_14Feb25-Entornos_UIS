@@ -35,7 +35,7 @@ public class Producto {
      */
     @ManyToOne
     @JoinColumn(name = "idProveedor")
-    private Proveedor idProveedor;
+    private Proveedor proveedor;
 
     /*
      * @Column nombre de la columna si el
@@ -44,41 +44,36 @@ public class Producto {
      * poner la anotacion
      */
 
-    @Column(name = "numeroDocumento")
-    private String numeroDocumento;
+    @Column(name = "ivaCompra")
+    private double ivaCompra;
 
     @Column(name = "nombre")
     private String nombre;
 
-    @Column(name = "password")
-    private String password;
+    @Column(name = "precioCompra")
+    private double precioCompra;
 
-    @Column(name = "nombreUsuario")
-    private String nombreUsuario;
-
-    @Column(name = "email")
-    private String email;
+    @Column(name = "precioVenta")
+    private double precioVenta;
 
     // Constructor vacío
     public Producto() {
     }
 
-    // Constructor no vacío
-    public Producto(Long id,
-            Proveedor idTipoDocumento,
-            String numeroDocumento,
+    // Constructor con parámetros
+    public Producto(
+            Long id,
+            Proveedor proveedor,
+            double ivaCompra,
             String nombre,
-            String password,
-            String nombreUsuario,
-            String email) {
-
+            double precioCompra,
+            double precioVenta) {
         this.id = id;
-        this.idTipoDocumento = idTipoDocumento;
-        this.numeroDocumento = numeroDocumento;
+        this.proveedor = proveedor;
+        this.ivaCompra = ivaCompra;
         this.nombre = nombre;
-        this.password = password;
-        this.nombreUsuario = nombreUsuario;
-        this.email = email;
+        this.precioCompra = precioCompra;
+        this.precioVenta = precioVenta;
     }
 
     public Long getId() {
@@ -89,20 +84,20 @@ public class Producto {
         this.id = id;
     }
 
-    public Proveedor getIdTipoDocumento() {
-        return idTipoDocumento;
+    public Proveedor getProveedor() {
+        return proveedor;
     }
 
-    public void setIdTipoDocumento(Proveedor idTipoDocumento) {
-        this.idTipoDocumento = idTipoDocumento;
+    public void setProveedor(Proveedor proveedor) {
+        this.proveedor = proveedor;
     }
 
-    public String getNumeroDocumento() {
-        return numeroDocumento;
+    public double getIvaCompra() {
+        return ivaCompra;
     }
 
-    public void setNumeroDocumento(String numeroDocumento) {
-        this.numeroDocumento = numeroDocumento;
+    public void setIvaCompra(double ivaCompra) {
+        this.ivaCompra = ivaCompra;
     }
 
     public String getNombre() {
@@ -113,27 +108,20 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public String getPassword() {
-        return password;
+    public double getPrecioCompra() {
+        return precioCompra;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPrecioCompra(double precioCompra) {
+        this.precioCompra = precioCompra;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    public double getPrecioVenta() {
+        return precioVenta;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
+    public void setPrecioVenta(double precioVenta) {
+        this.precioVenta = precioVenta;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
